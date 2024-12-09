@@ -1,0 +1,104 @@
+
+/* Reset de márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de body y html */
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilo para el canvas de Three.js */
+canvas.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background-color: #000;
+}
+
+/* Imagen superpuesta */
+.image-overlay {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mantener proporciones de las imágenes */
+.image-overlay img, .button img {
+    width: auto; 
+    height: auto; 
+    max-width: 100%; 
+    max-height: 100%;
+    aspect-ratio: attr(width) / attr(height); 
+}
+
+/* Imagen superior */
+.image-overlay.top {
+    top: 0;
+    width: 30vw;
+    height: 25vh; 
+}
+
+/* Imagen inferior */
+.image-overlay.bottom {
+    bottom: 0;
+    width: 15vw;
+    height: 12.5vh;
+}
+
+/* Estilo general para los botones */
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5vw;
+    height: 25vh;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón izquierdo */
+.left-button {
+    left: 0;
+}
+
+/* Botón derecho */
+.right-button {
+    right: 0;
+}
+
+.party-button {
+    position: fixed; /* Fijo en la esquina inferior derecha */
+    bottom: 20px; /* Separado 20px del borde inferior */
+    right: 20px; /* Separado 20px del borde derecho */
+    background-color: #ff69b4; /* Color rosado festivo */
+    color: #fff; /* Texto en blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    font-family: Arial, sans-serif; 
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 15; 
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.party-button:hover {
+    background-color: #ff85c1; 
+    transform: scale(1.1); 
+}
